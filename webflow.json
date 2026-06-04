@@ -1,0 +1,18 @@
+{
+  "cloud": {
+    "framework": "nextjs",
+    "workspace_id": "64c33b32bbf8ad730a8207d5",
+    "project_id": "838bbab0-0a1a-4926-bfe7-93740f0b1302",
+    "environment_id": "893d3ae8-6a58-48b7-91b6-43f4b4674930",
+    "deployment_type": "ssr",
+    "entrypoint_path": "./worker.js"
+  },
+  "telemetry": {
+    "global": {
+      "allowTelemetry": true,
+      "lastPrompted": 1780565313107,
+      "version": "2.0.0"
+    }
+  },
+  "siteId": "6a214548153a0bfde2e1bb93"
+}
