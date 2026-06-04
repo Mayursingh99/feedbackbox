@@ -1,10 +1,13 @@
-import db from '@/lib/db';
+import { initDb } from '@/lib/db';
 
 export async function POST(
   _req: Request,
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  db.prepare('UPDATE feedback SET votes = votes + 1 WHERE id = ?').run(Number(id));
+  const db = await initDb();
+  await db.prepare(
+    'UPDATE feedback SET votes = votes + 1 WHERE id = ?'
+  ).bind(Number(id)).run();
   return Response.json({ success: true });
 }
