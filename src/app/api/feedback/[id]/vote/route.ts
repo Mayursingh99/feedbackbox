@@ -5,6 +5,6 @@ export async function POST(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
-  db.prepare('UPDATE feedback SET votes = MAX(0, votes - 1) WHERE id = ?').run(Number(id));
+  db.prepare('UPDATE feedback SET votes = votes + 1 WHERE id = ?').run(Number(id));
   return Response.json({ success: true });
 }
